@@ -1,0 +1,9 @@
+#cloud-config
+apt_update: true
+apt_upgrade: true
+packages:
+  - npm
+runcmd:
+  - 'git clone https://github.com/kenmuse/node-app.git'
+  - npm install --prefix /node-app
+  - node /node-app/index.js &
